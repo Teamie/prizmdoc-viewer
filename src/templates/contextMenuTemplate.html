@@ -1,5 +1,5 @@
 <div class="pcc-pull-right">
-    <button class="pcc-icon pcc-icon-list" title="<%= annotationOptions %>" data-pcc-toggle="context-menu-options"></button>
+    <!-- <button class="pcc-icon pcc-icon-list" title="<%= annotationOptions %>" data-pcc-toggle="context-menu-options"></button> -->
     <button class="pcc-icon pcc-icon-updown" title="<%= moveContext %>" data-pcc-move-context-menu></button>
 </div>
 <div class="pcc-pull-left" data-pcc-toggle-id="context-menu-options"<% if (menuOptions.collapseLeftSide === true) { %> style="width:auto"<% } %>>
@@ -49,34 +49,34 @@
             </div>
             <% } %>
 
-            <% if (menuOptions.showLayerTab === true) { %>
+            <!-- <% if (menuOptions.showLayerTab === true) { %>
             <div data-pcc-toggle="context-menu-tab4" title="<%= layerOrder %>"
                  <% if (menuOptions.activateLayerTab === true) { %> class="pcc-active"<% } %>>
                  <span class="pcc-icon pcc-icon-layer-front"></span>
             </div>
-            <% } %>
+            <% } %> -->
 
             <% if (menuOptions.showESignTab === true) { %>
             <div data-pcc-toggle="context-menu-tab5" class="pcc-active" title="<%= currentSignature %>">
                 <span class="pcc-icon pcc-icon-esign"></span>
             </div>
             <% } %>
-
+            
             <% if (menuOptions.showLinkTab === true) { %>
             <div data-pcc-toggle="context-menu-tab6" class="pcc-active">
-                <span class="pcc-icon pcc-icon-link"></span>
+                <span class="pcc-icon pcc-icon-link"></span>    
             </div>
             <% } %>
-
+            
             <% if (menuOptions.showImageTab === true) { %>
             <div data-pcc-toggle="context-menu-tab7" class="pcc-active">
-                <span class="pcc-icon pcc-icon-image-stamp"></span>
+                <span class="pcc-icon pcc-icon-check"></span>    
             </div>
             <% } %>
 
             <% if (menuOptions.showLinkStylesTab === true) { %>
             <div data-pcc-toggle="context-menu-tab1">
-                <span class="pcc-icon pcc-icon-annotate-rectangle-filled"></span>
+                <span class="pcc-icon pcc-icon-annotate-rectangle-filled"></span>   
             </div>
             <% } %>
         </div>
@@ -88,9 +88,9 @@
                 <button data-pcc-add-comment-context-menu class="pcc-icon pcc-icon-comment" title="<%= addComment %>"></button>
             </div>
         <% } %>
-
+        
         <% if(menuOptions.showTabArea) { %>
-        <div data-pcc-toggle-id="context-menu-tab1"
+        <div data-pcc-toggle-id="context-menu-tab1" 
              class="pcc-tab-content<% if (menuOptions.activateMainTab === true) {%> pcc-open<% } %>">
 
             <% if (mark.getColor || mark.getFillColor) { %>
@@ -129,7 +129,7 @@
             </div>
             <% } %>
 
-            <% if (mark.getOpacity) { %>
+            <!-- <% if (mark.getOpacity) { %>
             <div class="pcc-select pcc-select-opacity" data-pcc-fill-opacity data-pcc-toggle="dropdown-fill-opacity" title="<%= fillOpacityMenuItem %>">
                 <div class="pcc-icon pcc-icon-opacity"></div>
                 <div class="pcc-label"><%= Math.round(parseInt(mark.getOpacity() / 2.55, 10) / 10) * 10 %>%</div>
@@ -148,7 +148,7 @@
                     <div><span class="pcc-option pcc-option100"></span> <%= opacityOptions.item10 %></div>
                 </div>
             </div>
-            <% } %>
+            <% } %> -->
 
             <% if (mark.getThickness) { %>
             <div class="pcc-select pcc-select-border" data-pcc-border-width data-pcc-toggle="dropdown-border" title="<%= borderWidth %>">
@@ -249,20 +249,20 @@
 
             <% if (mark.getFontStyle && mark.getType() !== 'TextRedaction') { %>
             <div class="pcc-row">
-                <button class="pcc-icon pcc-icon-text-bold<%= _.indexOf(mark.getFontStyle(), 'Bold') !== -1 ? ' pcc-active' : '' %>"
+                <button class="pcc-icon pcc-icon-text-bold<%= _.indexOf(mark.getFontStyle(), 'Bold') !== -1 ? ' pcc-active' : '' %>" 
                         data-pcc-font-style="Bold" title="<%= fontBoldText %>"></button>
 
-                <button class="pcc-icon pcc-icon-text-italic<%= _.indexOf(mark.getFontStyle(), 'Italic') !== -1 ? ' pcc-active' : '' %>"
+                <button class="pcc-icon pcc-icon-text-italic<%= _.indexOf(mark.getFontStyle(), 'Italic') !== -1 ? ' pcc-active' : '' %>" 
                         data-pcc-font-style="Italic" title="<%= fontItalic %>"></button>
 
-                <button class="pcc-icon pcc-icon-text-underline<%= _.indexOf(mark.getFontStyle(), 'Underline') !== -1 ? ' pcc-active' : '' %>"
+                <button class="pcc-icon pcc-icon-text-underline<%= _.indexOf(mark.getFontStyle(), 'Underline') !== -1 ? ' pcc-active' : '' %>" 
                         data-pcc-font-style="Underline" title="<%= fontUnderline %>"></button>
 
-                <button class="pcc-icon pcc-icon-text-strikeout<%= _.indexOf(mark.getFontStyle(), 'Strikeout') !== -1 ? ' pcc-active' : '' %>"
+                <button class="pcc-icon pcc-icon-text-strikeout<%= _.indexOf(mark.getFontStyle(), 'Strikeout') !== -1 ? ' pcc-active' : '' %>" 
                         data-pcc-font-style="Strikeout" title="<%= fontStrikeout %>"></button>
 
                 <% if (mark.getHorizontalAlignment) { %>
-                <button class="pcc-icon pcc-icon-text-<%= mark.getHorizontalAlignment().toLowerCase() %>"
+                <button class="pcc-icon pcc-icon-text-<%= mark.getHorizontalAlignment().toLowerCase() %>" 
                         data-pcc-font-align title="<%= paragraphAlignTitle %>"></button>
                 <% } %>
             </div>
@@ -351,32 +351,30 @@
         </div>
 
         <div data-pcc-toggle-id="context-menu-tab5" class="pcc-tab-content<% if (menuOptions.activateESignTab) { %> pcc-open<% } %>">
-            <div data-pcc-esign-preview></div>
+            <div data-pcc-esign-preview></div>       
         </div>
-
+        
         <div data-pcc-toggle-id="context-menu-tab6" class="pcc-tab-content<% if (menuOptions.activateLinkTab) { %> pcc-open<% } %>">
                 <div class='pcc-hyperlink-header'>
-                        <!-- Set href using the template specifier that escapes HTML to prevent breaking out of attribute value unexpectedly (see https://underscorejs.org/#template) -->                    
                         <a href="<%- menuOptions.linkText %>" target="_blank" data-pcc-link-navigate>
                             <span class="pcc-icon pcc-icon-external-link" title="<%= hyperlinkNavigate %>"></span>
                         </a>
-                        <label class="pcc-hyperlink-label"><%= hyperlink %></label>
+                        <label class="pcc-hyperlink-label"><%= hyperlink %></label>                        
                 </div>
                 <input type="text" data-pcc-link-input>
         </div>
-
+        
         <div data-pcc-toggle-id="context-menu-tab7" class="pcc-tab-content<% if (menuOptions.activateImageTab) { %> pcc-open<% } %>">
             <img src="<%= menuOptions.currentImage %>" alt="Image Stamp Preview" class="pcc-image-stamp-preview" data-pcc-image-stamp-preview>
         </div>
         <% } %>
     </div>
 
-    <% if (mark.getType().match(/annotation/i)) { %>
+    <!-- <% if (mark.getType().match(/annotation/i)) { %>
     <div class="pcc-row">
         <div data-pcc-checkbox="includeInBurnedDocument" class="pcc-checkbox<% if (mark.getData('Accusoft-burnAnnotation')) { %> pcc-checked<% } %>">
-            <span class="pcc-icon pcc-icon-check"></span>
-            <label><%= includeInBurnedDocument %></label>
+            <span></span><label><%= includeInBurnedDocument %></label>
         </div>
     </div>
-    <% } %>
+    <% } %> -->
 </div>
