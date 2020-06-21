@@ -8573,10 +8573,10 @@ var PCCViewer = window.PCCViewer || {};
 
                     control.refreshConversations();
 
-                    notify({
-                        message: language.annotations.save.success + currentLayer.getName(),
-                        type: 'success'
-                    });
+                    // notify({
+                    //     message: language.annotations.save.success + currentLayer.getName(),
+                    //     type: 'success'
+                    // });
                 };
             }
 
@@ -9803,7 +9803,7 @@ var PCCViewer = window.PCCViewer || {};
                     // add this for text selection only
                     return !!actionsFilter.highlight && event.toLowerCase() === PCCViewer.EventType.TextSelected.toLowerCase();
                 }
-            },{
+            },/*{
                 name: "Redact",
                 languageKey: "redact",
                 action: function(ev){
@@ -9828,7 +9828,7 @@ var PCCViewer = window.PCCViewer || {};
                     // add this for text selection only
                     return !!actionsFilter.redact && event.toLowerCase() === PCCViewer.EventType.TextSelected.toLowerCase();
                 }
-            },{
+            },*/{
                 name: "Hyperlink",
                 languageKey: "hyperlink",
                 action: function(ev){
